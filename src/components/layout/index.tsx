@@ -3,6 +3,8 @@ import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React from 'react';
 
+import OnePortLogo from "../../assets/oneportLogo.png";
+
 const { Header, Content, Sider } = Layout;
 
 const items1: MenuProps['items'] = ['1', '2', '3'].map(key => ({
@@ -33,7 +35,9 @@ const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOu
 const LayoutBuilder: React.FC = () => (
   <Layout style={{ height: 100 }}>
     <Header className="header">
-      <div className="logo" />
+      <div className="logo">
+      <img src={OnePortLogo} alt="oneportLogo" />
+      </div>
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} items={items1} />
     </Header>
     <Layout>
