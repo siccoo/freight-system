@@ -1,16 +1,13 @@
-/* #components-layout-demo-responsive .oneportLogo {
-  height: 32px;
-  margin: 16px;
-  background: rgba(255, 255, 255, 0.2);
-} */
-
 .site-layout-background {
   background: #fff;
 }
 
 .layout__sidebar {
   background: #fff !important;
-  flex: 1
+  flex: 0 0 250px !important; 
+  max-width: 250px !important; 
+  min-width: 250px !important; 
+  width: 250px !important;
 }
 
 .sidebar__list {
@@ -25,26 +22,42 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 18px;
-  padding: 20px;
+  color: #6B7280;
+  padding: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
 
+.sidebar__listItem:hover {
+  color: #000000; 
+}
+
 .sidebar__icon {
   margin-right: 25px;
-}
-
-.sidebar__listItem.active,
-.sidebar__listItem.hover {
-  background-color: #3AB44A;
-  width: 44px;
-  height: 44px;
+  background: transparent;
   border-radius: 8px;
-  /* margin-left: -25px; */
+  color: #6B7280;
+  width: 40px;
+  height: 40px;
+  padding: 10px ;
 }
 
-.sidebar__icon {
-  margin-right: 10px;
-  font-size: 20px !important;
+.sidebar__image {
+  margin-right: 25px;
+  background: transparent;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  padding: 10px ;
+}
+
+.sidebar__icon:hover {
+  background: #3ab44a; 
+  color: #fff !important;
+}
+
+.sidebar__image:hover {
+  background: #3ab44a; 
+  color: #fff;
 }

@@ -1,3 +1,78 @@
-.topbar__wrapper {
+.topbar {
+  width: 100%;
+  height: 55px;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
 
+.topbar__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar__left {
+  display: flex;
+}
+
+.topbar__left p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  color: #000000;
+  letter-spacing: -0.02em;
+  margin-bottom: -20px;
+}
+
+.topbar__right {
+  display: flex;
+}
+
+.icons__container {
+  position: relative;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.notify {
+  right: -15px;
+}
+
+.badge {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top: 15px;
+  right: -2px;
+  background-color: #dd2747;
+  color: #ffffff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-family: "Inter";
+}
+
+.topbar__avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+select {
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
 }

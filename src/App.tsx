@@ -1,11 +1,11 @@
 import 'antd/dist/antd.css';
 import './App.css';
-import LayoutBuilder from "./components/sidebar"
+import Home from './pages/home';
 
 function App() {
   return (
     <div className="App">
-      <LayoutBuilder />
+      <Home />
     </div>
   );
 }
