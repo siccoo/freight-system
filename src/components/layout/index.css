@@ -14,5 +14,41 @@
 
 .layout__sidebar {
   background: #fff !important;
-  /* border-left: 1px solid #E5E7EB; */
+  flex: 1
+}
+
+.sidebar__list {
+  list-style: none;
+  padding: 2px;
+  margin-top: 25px;
+}
+
+.sidebar__listItem {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__icon {
+  margin-right: 25px;
+}
+
+.sidebar__listItem.active,
+.sidebar__listItem.hover {
+  background-color: #3AB44A;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  /* margin-left: -25px; */
+}
+
+.sidebar__icon {
+  margin-right: 10px;
+  font-size: 20px !important;
 }
