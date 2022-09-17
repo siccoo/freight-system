@@ -2,10 +2,11 @@ import { Layout } from 'antd';
 import React from 'react';
 
 import OnePortLogo from "../../assets/oneportLogo.png";
+import Topbar from '../topbar';
 
 import "./index.css";
 
-const { Header, Content, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 const LayoutBuilder: React.FC = () => (
   <Layout style={{ height: "100vh" }}>
@@ -101,7 +102,7 @@ const LayoutBuilder: React.FC = () => (
       </div>
     </Sider>
     <Layout>
-      <Header className="site-layout-sub-header-background" style={{ padding: 0, borderBottom: "1px solid #E5E7EB", height: 75 }} />
+      <Topbar />
       <Content style={{ margin: '0' }}>
         <div className="site-layout-background" style={{ padding: 24, minHeight: 710 }}>
           content

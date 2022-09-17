@@ -1,6 +1,6 @@
 import 'antd/dist/antd.css';
 import './App.css';
-import LayoutBuilder from "./components/layout"
+import LayoutBuilder from "./components/sidebar"
 
 function App() {
   return (
