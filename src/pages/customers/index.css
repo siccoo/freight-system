@@ -4,5 +4,24 @@
 }
 
 button {
-    
+    background: #3AB44A;
+    border-radius: 6px;
+    width: 20%;
+    color: #fff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 10px 24px;
+    text-decoration: none;
+    border: none;
+    margin-bottom: 50px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    button {
+        padding: 6px 18px;
+        font-size: 14px;
+    }
 }
