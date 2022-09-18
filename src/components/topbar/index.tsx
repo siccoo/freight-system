@@ -15,9 +15,6 @@ const Topbar = () => {
                 borderBottom: "1px solid #E5E7EB",
                 height: 85,
                 background: "#ffffff",
-                // position: "sticky",
-                // top: 0,
-                // zIndex: 350
             }}>
             <div className='topbar__wrapper'>
                 <div className='topbar__left'>

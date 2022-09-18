@@ -11,6 +11,7 @@ import TrackIcon from "../../assets/trackingIcon.svg";
 import DocumentIcon from "../../assets/documentIcon.svg";
 import QuoteIcon from "../../assets/quoteIcon.svg";
 import InvoiceIcon from "../../assets/invoiceIcon.svg";
+import Customers from '../../pages/customers';
 
 
 const { Content, Sider } = Layout;
@@ -106,11 +107,7 @@ const LayoutBuilder: React.FC = () => (
     </Sider>
     <Layout>
       <Topbar />
-      <Content style={{ margin: '0' }}>
-        <div className="site-layout-background" style={{ padding: 24, minHeight: 710 }}>
-          content
-        </div>
-      </Content>
+      <Customers />
     </Layout>
   </Layout>
 );
