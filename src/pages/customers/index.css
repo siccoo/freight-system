@@ -1,6 +1,5 @@
 .site-layout-background {
     background: #fff;
-  
 }
 
 button {
@@ -10,7 +9,7 @@ button {
     color: #fff;
     font-family: "Inter";
     font-style: normal;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 18px;
     line-height: 28px;
     padding: 10px 24px;
@@ -24,4 +23,18 @@ button {
         padding: 6px 18px;
         font-size: 14px;
     }
+}
+
+.space-action {
+    background: #FFFFFF;
+border: 1px solid #D1D5DB;
+border-radius: 6px;
+padding: 8px 20px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+color: #000000;
+text-decoration: none;
 }
