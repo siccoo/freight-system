@@ -1,0 +1,96 @@
+.site-layout-background {
+  background: #fff;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: #3ab44a;
+  border-radius: 6px;
+  width: 20%;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  padding: 10px 24px;
+  text-decoration: none;
+  border: none;
+  margin-bottom: 50px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  button {
+    padding: 6px 18px;
+    font-size: 14px;
+  }
+}
+
+.space-action {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  text-decoration: none;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .space-action {
+    padding: 4px 14px;
+    font-size: 12px;
+  }
+}
+
+.ant-table table {
+  width: 100%;
+  text-align: left;
+  border-radius: 2px 2px 0 0;
+  /* border-collapse: separate; */
+  border-spacing: 0;
+}
+
+th.ant-table-cell {
+  background: none !important;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  color: #6b7280 !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ant-table-pagination.ant-pagination {
+  margin: 16px 0;
+  display: none;
+}
+
+tbody.ant-table-tbody {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px 8px 8px 8px !important;
+}
+
+td.ant-table-cell {
+  padding: 25px !important;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 28px;
+  color: #000000;
+}

@@ -1,6 +1,6 @@
 import 'antd/dist/antd.css';
 import './App.css';
-import Home from './pages/home';
+import Home from './containers/home';
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
-import { Space, Table, Tag } from 'antd';
+import { Space, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 
 import "./index.css"
@@ -21,7 +21,7 @@ const columns: ColumnsType<DataType> = [
         title: 'First Name',
         dataIndex: 'first_name',
         key: 'first_name',
-        render: text => <a>{text}</a>,
+        render: text => <a href="/">{text}</a>,
     },
     {
         title: 'Last Name',
@@ -43,33 +43,13 @@ const columns: ColumnsType<DataType> = [
         dataIndex: 'last_login',
         key: 'last_login',
     },
-    // {
-    //     title: 'Email Address',
-    //     key: 'tags',
-    //     dataIndex: 'tags',
-    //     render: (_, { tags }) => (
-    //         <>
-    //             {tags.map(tag => {
-    //                 let color = tag.length > 5 ? 'geekblue' : 'green';
-    //                 if (tag === 'loser') {
-    //                     color = 'volcano';
-    //                 }
-    //                 return (
-    //                     <Tag color={color} key={tag}>
-    //                         {tag.toUpperCase()}
-    //                     </Tag>
-    //                 );
-    //             })}
-    //         </>
-    //     ),
-    // },
     {
         title: '',
         key: 'action',
         render: (_, record) => (
             <Space size="middle">
-                <a className='space-action'>Shipment</a>
-                <a className='space-action'>Edit</a>
+                <a href="/" className='space-action'>Shipment</a>
+                <a href="/" className='space-action'>Edit</a>
             </Space>
         ),
     },
@@ -101,7 +81,7 @@ const Customers: React.FC = () => {
         <Content style={{ margin: '0' }}>
             <div className="site-layout-background" style={{ padding: "40px 40px", minHeight: 710 }}>
                 <button type='submit'>Add Customer {" "} +</button>
-                <Table columns={columns} dataSource={data} />
+                <Table columns={columns} dataSource={data}  />
             </div>
         </Content>
     )

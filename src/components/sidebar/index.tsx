@@ -11,13 +11,13 @@ import TrackIcon from "../../assets/trackingIcon.svg";
 import DocumentIcon from "../../assets/documentIcon.svg";
 import QuoteIcon from "../../assets/quoteIcon.svg";
 import InvoiceIcon from "../../assets/invoiceIcon.svg";
-import Customers from '../../pages/customers';
+import Customers from '../../containers/customers';
 
 
-const { Content, Sider } = Layout;
+const { Sider } = Layout;
 
 const LayoutBuilder: React.FC = () => (
-  <Layout style={{ height: "100vh" }}>
+  <Layout style={{ height: "100vh", overflow: "hidden" }}>
     <Sider
       breakpoint="lg"
       collapsedWidth="0"
@@ -30,7 +30,7 @@ const LayoutBuilder: React.FC = () => (
       className="layout__sidebar"
       style={{
         margin: 0,
-        minHeight: 750,
+        minHeight: 800,
         borderRight: "1px solid #E5E7EB",
       }}
     >
