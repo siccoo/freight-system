@@ -10,6 +10,12 @@ a:active {
   text-decoration: none;
 }
 
+.customers-avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
 button {
   background: #3ab44a;
   border-radius: 6px;
@@ -54,12 +60,33 @@ button {
   }
 }
 
+.space-action-green {
+  background: #3AB44A;
+  border: 1px solid #3AB44A;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .space-action-green {
+    padding: 4px 14px;
+    font-size: 12px;
+  }
+}
+
 .ant-table table {
   width: 100%;
   text-align: left;
-  border-radius: 2px 2px 0 0;
-  /* border-collapse: separate; */
-  border-spacing: 0;
+  /* border-radius: 2px 2px 0 0;
+  border-collapse: separate;
+  border-spacing: 0; */
 }
 
 th.ant-table-cell {
@@ -85,8 +112,12 @@ tbody.ant-table-tbody {
   border-radius: 8px 8px 8px 8px !important;
 }
 
+.ant-table-row .ant-table-row-level-0:hover {
+  background: #d0e9d7 !important;
+}
+
 td.ant-table-cell {
-  padding: 25px !important;
+  padding: 20px !important;
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;

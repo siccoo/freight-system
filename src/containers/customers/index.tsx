@@ -2,8 +2,11 @@ import React from 'react';
 import { Layout } from 'antd';
 import { Space, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
+import SiderLayout from '../../components/sidebar';
 
-import "./index.css"
+import "./index.css";
+
+import Icon from "../../assets/imageIcon.png"
 
 const { Content } = Layout;
 
@@ -21,7 +24,15 @@ const columns: ColumnsType<DataType> = [
         title: 'First Name',
         dataIndex: 'first_name',
         key: 'first_name',
-        render: text => <a href="/">{text}</a>,
+        render: (text) => {
+            return (
+                <div>
+                    <img className='customers-avatar' src={Icon} alt="" />
+                    {text}
+                </div>
+                // <a href="/">{text}</a>
+            )
+        },
     },
     {
         title: 'Last Name',
@@ -49,7 +60,7 @@ const columns: ColumnsType<DataType> = [
         render: (_, record) => (
             <Space size="middle">
                 <a href="/" className='space-action'>Shipment</a>
-                <a href="/" className='space-action'>Edit</a>
+                <a href="/" className='space-action-green'>Edit</a>
             </Space>
         ),
     },
@@ -78,12 +89,14 @@ const data: DataType[] = [
 
 const Customers: React.FC = () => {
     return (
-        <Content style={{ margin: '0' }}>
-            <div className="site-layout-background" style={{ padding: "40px 40px", minHeight: 710 }}>
-                <button type='submit'>Add Customer {" "} +</button>
-                <Table columns={columns} dataSource={data}  />
-            </div>
-        </Content>
+        <SiderLayout>
+            
+                <div className="site-layout-background" style={{ padding: "40px 40px", minHeight: 710 }}>
+                    <button type='submit'>Add Customer {" "} +</button>
+                    <Table columns={columns} dataSource={data} />
+                </div>
+        </SiderLayout>
+
     )
 }
 
