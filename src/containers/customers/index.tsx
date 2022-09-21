@@ -7,6 +7,7 @@ import SiderLayout from '../../components/sidebar';
 import "./index.css";
 
 import Icon from "../../assets/imageIcon.png"
+import { Link } from 'react-router-dom';
 
 const { Content } = Layout;
 
@@ -59,8 +60,8 @@ const columns: ColumnsType<DataType> = [
         key: 'action',
         render: (_, record) => (
             <Space size="middle">
-                <a href="/" className='space-action'>Shipment</a>
-                <a href="/" className='space-action-green'>Edit</a>
+                <Link to="/shipments" className='space-action' >Shipment</Link>
+                <Link to="/" className='space-action-green'>Edit</Link>
             </Space>
         ),
     },
