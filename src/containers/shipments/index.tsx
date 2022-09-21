@@ -1,5 +1,4 @@
-import React from 'react'
-import { Layout } from 'antd';
+import React, { useState } from 'react'
 import { Space, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import SiderLayout from '../../components/sidebar';
@@ -12,18 +11,18 @@ import { Link } from 'react-router-dom';
 
 interface DataType {
     key: string;
-    first_name: string;
-    last_name: string;
-    email: string;
-    phone: string;
-    last_login: string;
+    shipping_type: string;
+    origin_port_city: string;
+    destination_port_city: string;
+    shipment_pickup_date: string;
+    _id: number;
 }
 
 const columns: ColumnsType<DataType> = [
     {
-        title: 'First Name',
-        dataIndex: 'first_name',
-        key: 'first_name',
+        title: 'Shipment Type',
+        dataIndex: 'shipping_type',
+        key: 'shipping_type',
         render: (text: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined) => {
             return (
                 <div>
@@ -35,59 +34,74 @@ const columns: ColumnsType<DataType> = [
         },
     },
     {
-        title: 'Last Name',
-        dataIndex: 'last_name',
-        key: 'last_name',
+        title: 'Origin',
+        dataIndex: 'origin_port_city',
+        key: 'origin_port_city',
     },
     {
-        title: 'Email Address',
-        dataIndex: 'email',
-        key: 'email',
+        title: 'Destination',
+        dataIndex: 'destination_port_city',
+        key: 'destination_port_city',
     },
     {
-        title: 'Phone Number',
-        dataIndex: 'phone',
-        key: 'phone',
+        title: 'Shipment Date',
+        dataIndex: 'shipment_pickup_date',
+        key: 'shipment_pickup_date',
     },
     {
-        title: 'Last Login',
-        dataIndex: 'last_login',
-        key: 'last_login',
+        title: 'Shipping ID',
+        dataIndex: '_id',
+        key: '_id',
     },
     {
         title: '',
         key: 'action',
-        render: (_: any, record: any) => (
+        render: (_: any, record: any) => {
+
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            // const [shipmentDetails, setShipmentDetails] = useState(true);
+
+            // const switchToShipmentDetails = () => {
+            //     setShipmentDetails(true)
+            // }
+
+            return (
             <Space size="middle">
-                <Link to="/shipments" className='space-action' >Shipment</Link>
-                <Link to="/" className='space-action-green'>Edit</Link>
+                {/* <Link to="/shipments" className='space-action' >Shipment</Link> */}
+                <Link to="/shipment-details" className='space-action-green'>View Details</Link>
             </Space>
-        ),
+        )},
     },
 ];
 
 const data: DataType[] = [
     {
         key: '1',
-        first_name: 'Adewumi',
-        last_name: 'Adebayo',
-        email: 'debaryour@gmail.com',
-        phone: "08087656543",
-        last_login: 'Apr 02, 2022'
+        shipping_type: 'Export',
+        origin_port_city: 'NGAPP, Lagos, Nigeria',
+        destination_port_city: 'Arlington, VA, USA',
+        shipment_pickup_date: "Apr 02, 2022",
+        _id: 588393926
 
     },
     {
         key: '2',
-        first_name: 'Albert',
-        last_name: 'Flores',
-        email: 'deanna.curtis@example.com',
-        phone: "07037656543",
-        last_login: 'Apr 02, 2022'
+        shipping_type: 'Import',
+        origin_port_city: 'Arlington, VA, USA',
+        destination_port_city: 'NGAPP, Lagos, Nigeria',
+        shipment_pickup_date: "Apr 02, 2022",
+        _id: 588393926
 
     }
 ];
 
 const Shipments: React.FC = () => {
+    // const [shipmentDetails, setShipmentDetails] = useState(true);
+
+    // const switchToShipmentDetails = () => {
+    //     setShipmentDetails(true)
+    // }
+
     return (
         <SiderLayout>
             <div className="site-layout-background" style={{ padding: "40px 40px", minHeight: 710 }}>
@@ -98,7 +112,7 @@ const Shipments: React.FC = () => {
                     <div className='shipment__container--image'>
                         <img src={Icon} alt="" style={{ marginRight: 10 }} />
                         <div>
-                            <h6>Albert Flores</h6>
+                            <p className='bold'>Albert Flores</p>
                             <p>deanna.curtis@example.com</p>
                             <p>07037656543</p>
                         </div>

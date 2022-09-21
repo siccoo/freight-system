@@ -91,7 +91,6 @@ const data: DataType[] = [
 const Customers: React.FC = () => {
     return (
         <SiderLayout>
-            
                 <div className="site-layout-background" style={{ padding: "40px 40px", minHeight: 710 }}>
                     <button type='submit'>Add Customer {" "} +</button>
                     <Table columns={columns} dataSource={data} />
