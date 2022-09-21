@@ -1,5 +1,4 @@
 import React from 'react';
-import { Layout } from 'antd';
 import { Space, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import SiderLayout from '../../components/sidebar';
@@ -8,8 +7,6 @@ import "./index.css";
 
 import Icon from "../../assets/imageIcon.png"
 import { Link } from 'react-router-dom';
-
-const { Content } = Layout;
 
 interface DataType {
     key: string;
