@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Space, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import SiderLayout from '../../components/sidebar';
+import makeAPICall from '../../utils/config';
 
 import "./index.css";
 
@@ -9,26 +10,38 @@ import Icon from "../../assets/imageIcon.png"
 import { Link } from 'react-router-dom';
 
 interface DataType {
-    key: string;
+    id: string;
     first_name: string;
     last_name: string;
     email: string;
     phone: string;
-    last_login: string;
+    ip_address: string;
+    is_active: Boolean;
+    Avatar: string;
 }
+
+// {
+//     "id": "45f110de-552f-4588-b403-5bc572f9af2c",
+//     "first_name": "Barbabas",
+//     "last_name": "Gladdis",
+//     "email": "bgladdis0@dyndns.org",
+//     "phone": "+380 (767) 862-1364",
+//     "ip_address": "146.149.76.231",
+//     "is_active": false,
+//     "Avatar": "https://robohash.org/quiscorruptideserunt.png?size=50x50&set=set1"
+// },
 
 const columns: ColumnsType<DataType> = [
     {
         title: 'First Name',
         dataIndex: 'first_name',
         key: 'first_name',
-        render: (text) => {
+        render: (first_name, data) => {
             return (
                 <div>
-                    <img className='customers-avatar' src={Icon} alt="" />
-                    {text}
+                    <img className='customers-avatar' src={data.Avatar} alt="" />
+                    {first_name}
                 </div>
-                // <a href="/">{text}</a>
             )
         },
     },
@@ -49,13 +62,16 @@ const columns: ColumnsType<DataType> = [
     },
     {
         title: 'Last Login',
-        dataIndex: 'last_login',
-        key: 'last_login',
+        render: () => {
+            return (
+                <p>April 2, 2022</p>
+            )
+        },
     },
     {
         title: '',
         key: 'action',
-        render: (_, record) => (
+        render: () => (
             <Space size="middle">
                 <Link to="/shipments" className='space-action' >Shipment</Link>
                 <Link to="/" className='space-action-green'>Edit</Link>
@@ -64,34 +80,40 @@ const columns: ColumnsType<DataType> = [
     },
 ];
 
-const data: DataType[] = [
-    {
-        key: '1',
-        first_name: 'Adewumi',
-        last_name: 'Adebayo',
-        email: 'debaryour@gmail.com',
-        phone: "08087656543",
-        last_login: 'Apr 02, 2022'
-
-    },
-    {
-        key: '2',
-        first_name: 'Albert',
-        last_name: 'Flores',
-        email: 'deanna.curtis@example.com',
-        phone: "07037656543",
-        last_login: 'Apr 02, 2022'
-
-    }
-];
-
 const Customers: React.FC = () => {
+    const [customersData, setCustomersData] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const getCustomers = () => {
+            setLoading(true);
+            return makeAPICall({
+                path: `get_customers`,
+                method: "GET",
+            })
+                .then((data) => {
+                    setCustomersData(data);
+                    setLoading(false);
+                    console.log(data);
+                })
+                .catch((err) => {
+                    setLoading(false);
+                    console.log(err);
+                });
+        }
+
+        getCustomers();
+    })
     return (
         <SiderLayout>
-                <div className="site-layout-background" style={{ padding: "40px 40px", minHeight: 710 }}>
-                    <button type='submit'>Add Customer {" "} +</button>
-                    <Table columns={columns} dataSource={data} />
+            <div className="site-layout-background" style={{ padding: "40px 40px", minHeight: 710 }}>
+                <button type='submit'>Add Customer {" "} +</button>
+                {loading ? 'loading...' : (
+                <div>
+                    {!customersData  ? ("No data") : (<Table columns={columns} dataSource={customersData} />)}
                 </div>
+                )}
+            </div>
         </SiderLayout>
 
     )
