@@ -4,6 +4,7 @@ import type { UploadProps } from 'antd';
 import { Link } from 'react-router-dom'
 import SiderLayout from '../../components/sidebar'
 import ArrowLeft from "../../assets/arrowLeftIcon.svg";
+import ArrowUp from "../../assets/arrowUpIcon.png";
 
 import "./index.css"
 
@@ -47,7 +48,7 @@ const ShipmentDetails: React.FC = () => {
                     <Link className='shipmentDetails-back' to="/shipments">
                         <img src={ArrowLeft} alt="" />
                         {/* <div> */}
-                            <p className='paragraph'>Shipment Details</p>
+                        <p className='paragraph'>Shipment</p>
                         {/* </div> */}
                     </Link>
                     <div className='shipment-box-button'>
@@ -59,7 +60,26 @@ const ShipmentDetails: React.FC = () => {
                 </div>
 
                 <div className='shipmentDetails-upload-container'>
-
+                    <div className='shipmentDetails-upload-container--export'>
+                        <p>
+                            <img src={ArrowUp} alt="" /> {" "}
+                            Export
+                        </p>
+                        <p>Apr 02, 2022</p>
+                        <p><span>Shipment ID</span><br />
+                            489395758</p>
+                    </div>
+                    <div className='shipmentDetails-upload-container--import'>
+                        <div>
+                            <p>Port of Discharge</p>
+                            <span>NGAPP <br /> <small>Lagos, Nigeria</small> </span>
+                        </div>
+                        <div>
+                            <p>Delivery location</p>
+                            <span>Arlington <br /> <small>VA, USA</small> </span>
+                        </div>
+                        <div></div>
+                    </div>
                 </div>
 
                 <div className='tab'>
@@ -115,21 +135,21 @@ const ShipmentDetails: React.FC = () => {
                             </div>
                             <div className='shipmentDetails-upload-files'>
                                 {/* <div className='action'> */}
-                                <div className='shipmentDetails-upload-files--save'>
+                                {/* <div className='shipmentDetails-upload-files--save'> */}
                                     <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4.13336 6.9999H7.86669M4.13336 9.48879H7.86669M9.11114 12.5999H2.88891C2.20163 12.5999 1.64447 12.0427 1.64447 11.3555V2.64435C1.64447 1.95706 2.20163 1.3999 2.88891 1.3999H6.36452C6.52954 1.3999 6.6878 1.46546 6.80449 1.58215L10.1733 4.95099C10.29 5.06768 10.3556 5.22595 10.3556 5.39097V11.3555C10.3556 12.0427 9.79843 12.5999 9.11114 12.5999Z" stroke="#3AB44A" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                </div>
+                                {/* </div> */}
                                 <div className='shipmentDetails-upload-files--text'>
                                     <p>NXP Form</p>
                                     <span>NXP-Form.pdf</span>
-                                {/* </div> */}
+                                    {/* </div> */}
                                 </div>
-                                <div className='shipmentDetails-upload-files--delete'>
+                                {/* <div className='shipmentDetails-upload-files--delete'> */}
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M13.4445 4.11111L12.7699 13.5553C12.7118 14.3693 12.0344 15 11.2183 15H4.78179C3.96569 15 3.28834 14.3693 3.23019 13.5553L2.55561 4.11111M6.4445 7.22222V11.8889M9.55561 7.22222V11.8889M10.3334 4.11111V1.77778C10.3334 1.34822 9.98516 1 9.55561 1H6.4445C6.01494 1 5.66672 1.34822 5.66672 1.77778V4.11111M1.77783 4.11111H14.2223" stroke="#EF4444" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                </div>
+                                {/* </div> */}
                             </div>
                         </Tabs.TabPane>
                         <Tabs.TabPane className='shipment-tabpane' tab="Cargo Details" key="2">

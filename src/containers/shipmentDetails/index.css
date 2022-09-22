@@ -19,8 +19,8 @@
 }
 
 .shipmentDetails-back img {
-    width: 70% !important;
-    padding-left: 10px;
+  width: 70% !important;
+  padding-left: 10px;
 }
 
 .shipment-back-box .paragraph {
@@ -63,6 +63,85 @@
     padding: 6px 18px;
     font-size: 12px;
   }
+}
+
+.shipmentDetails-upload-container {
+  /* po */
+  margin-top: 30px;
+}
+
+.shipmentDetails-upload-container--export {
+  background: #3ab44a;
+  border-radius: 14px 14px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px 10px 30px;
+  width: 755px;
+}
+
+.shipmentDetails-upload-container--export p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.shipmentDetails-upload-container--export span {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+}
+
+.shipmentDetails-upload-container--export img {
+  background: #f0fdf4;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+.shipmentDetails-upload-container--import {
+  background: #f0fdf4;
+  border-radius: 0px 0px 14px 14px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px 20px 30px;
+  width: 755px;
+}
+
+.shipmentDetails-upload-container--import p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.shipmentDetails-upload-container--import span {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+
+.shipmentDetails-upload-container--import small {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 20px;
+color: #000000;
 }
 
 .tab {
@@ -333,7 +412,7 @@
 }
 
 .shipmentDetails-upload-files--delete {
-    background: #FEF2F2;
+  background: #fef2f2;
   border-radius: 24px;
   width: 32px;
   height: 32px;
