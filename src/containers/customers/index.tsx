@@ -6,7 +6,7 @@ import makeAPICall from '../../utils/config';
 
 import "./index.css";
 
-import Icon from "../../assets/imageIcon.png"
+// import Icon from "../../assets/imageIcon.png"
 import { Link } from 'react-router-dom';
 
 interface DataType {
@@ -19,17 +19,6 @@ interface DataType {
     is_active: Boolean;
     Avatar: string;
 }
-
-// {
-//     "id": "45f110de-552f-4588-b403-5bc572f9af2c",
-//     "first_name": "Barbabas",
-//     "last_name": "Gladdis",
-//     "email": "bgladdis0@dyndns.org",
-//     "phone": "+380 (767) 862-1364",
-//     "ip_address": "146.149.76.231",
-//     "is_active": false,
-//     "Avatar": "https://robohash.org/quiscorruptideserunt.png?size=50x50&set=set1"
-// },
 
 const columns: ColumnsType<DataType> = [
     {
@@ -85,25 +74,25 @@ const Customers: React.FC = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const getCustomers = () => {
-            setLoading(true);
-            return makeAPICall({
-                path: `get_customers`,
-                method: "GET",
-            })
-                .then((data) => {
-                    setCustomersData(data);
-                    setLoading(false);
-                    console.log(data);
-                })
-                .catch((err) => {
-                    setLoading(false);
-                    console.log(err);
-                });
-        }
-
         getCustomers();
-    })
+    });
+
+    const getCustomers = () => {
+        setLoading(true);
+        return makeAPICall({
+            path: `get_customers`,
+            method: "GET",
+        })
+            .then((data) => {
+                setCustomersData(data);
+                setLoading(false);
+                console.log(data);
+            })
+            .catch((err) => {
+                setLoading(false);
+                console.log(err);
+            });
+    }
     return (
         <SiderLayout>
             <div className="site-layout-background" style={{ padding: "40px 40px", minHeight: 710 }}>

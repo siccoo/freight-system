@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Tabs, Drawer, message, Upload } from 'antd';
 import type { UploadProps } from 'antd';
 import { Link } from 'react-router-dom'
@@ -6,7 +6,7 @@ import SiderLayout from '../../components/sidebar'
 import ArrowLeft from "../../assets/arrowLeftIcon.svg";
 import ArrowUp from "../../assets/arrowUpIcon.png";
 
-import makeAPICall from '../../utils/config';
+// import makeAPICall from '../../utils/config';
 
 import "./index.css"
 
