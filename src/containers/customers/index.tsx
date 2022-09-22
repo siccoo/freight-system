@@ -75,7 +75,7 @@ const Customers: React.FC = () => {
 
     useEffect(() => {
         getCustomers();
-    });
+    }, []);
 
     const getCustomers = () => {
         setLoading(true);
