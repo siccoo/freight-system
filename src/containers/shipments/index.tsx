@@ -96,11 +96,6 @@ const data: DataType[] = [
 ];
 
 const Shipments: React.FC = () => {
-    // const [shipmentDetails, setShipmentDetails] = useState(true);
-
-    // const switchToShipmentDetails = () => {
-    //     setShipmentDetails(true)
-    // }
 
     return (
         <SiderLayout>

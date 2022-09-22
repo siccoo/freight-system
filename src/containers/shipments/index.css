@@ -9,6 +9,11 @@
   height: 39px;
 }
 
+.shipment-back img {
+    /* width: 70%; */
+    padding-left: 10px;
+}
+
 .shipment__container {
   margin-top: 20px;
   display: flex;
@@ -44,12 +49,12 @@
 }
 
 .shipment__container--image .bold {
-    font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 24px;
-color: #000000;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000000;
 }
 
 .shipment__container--edit {

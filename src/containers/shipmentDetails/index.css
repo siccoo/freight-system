@@ -3,28 +3,34 @@
 }
 
 .shipment-back-box {
-  width: 630px;
+  width: 755px;
   display: flex;
   justify-content: space-between;
   /* margin-top: 30px; */
 }
 
-.shipment-back {
+.shipmentDetails-back {
   display: flex;
   gap: 10px;
+  background: #f9fafb;
+  border-radius: 24px;
+  width: 39px;
+  height: 39px;
 }
 
-.shipment-back img {
-  width: 60%;
-  /* height: 17px; */
-  margin-right: 10px;
+.shipmentDetails-back img {
+    width: 70% !important;
+    padding-left: 10px;
 }
 
-.shipment-back p {
+.shipment-back-box .paragraph {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  margin-right: -0px;
   /* line-height: 32px; */
   letter-spacing: -0.02em;
   color: #000000;
@@ -35,8 +41,9 @@
   gap: 10px;
 }
 
-.shipment-box-button button {
-  width: 165px;
+.shipment-box-button span {
+  align-items: center;
+  justify-content: center;
   background: #f3f4f6;
   border: 1px solid #d1d5db;
   box-shadow: 0px 1px 2px #1018280d;
@@ -58,8 +65,12 @@
   }
 }
 
+.tab {
+  margin-top: 30px;
+}
+
 .tab .shipment-tab {
-  width: 630px;
+  width: 755px;
   text-align: center !important;
 }
 
@@ -71,6 +82,60 @@
   line-height: 24px;
   text-align: left;
   color: #000000 !important;
+}
+
+.shipmentDetails__border {
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 30px; */
+}
+
+.shipmentDetails-spacing {
+  margin-bottom: -30px;
+}
+
+.newDetails-shipment {
+  width: 165px;
+  height: 48px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 10px 15px;
+  color: #374151;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 28px;
+  margin-right: 10px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .newDetails-shipment {
+    padding: 6px 18px;
+    font-size: 12px;
+  }
+}
+
+.newDetails-shipment--green {
+  width: 180px;
+  background: #3ab44a;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 28px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .newDetails-shipment--green {
+    padding: 6px 18px;
+    font-size: 12px;
+  }
 }
 
 .site-form-in-drawer-wrapper {
@@ -92,25 +157,25 @@
 }
 
 .ant-drawer-header-title {
-    display: flex;
+  display: flex;
 }
 
 .ant-drawer-close {
-    display: inline-block;
-    margin-right: -1px !important;
-    color: rgba(0,0,0,.45);
-    font-weight: 700;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 1;
-    text-decoration: none;
-    background: transparent;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    transition: color .3s;
-    text-rendering: auto;
-    margin-bottom: -1px;
+  display: inline-block;
+  margin-right: -1px !important;
+  color: rgba(0, 0, 0, 0.45);
+  font-weight: 700;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: color 0.3s;
+  text-rendering: auto;
+  margin-bottom: -1px;
 }
 
 .shipment-drawer p {
@@ -236,8 +301,57 @@
 }
 
 @media only screen and (max-width: 1024px) {
-    .shipment-drawer button {
-      font-size: 12px;
-      line-height: 12px;
-    }
+  .shipment-drawer button {
+    font-size: 12px;
+    line-height: 12px;
   }
+}
+
+.shipmentDetails-upload-files {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 20px;
+}
+
+.shipmentDetails-upload-files--save {
+  margin-right: 10px;
+  background: #f0fdf4;
+  border-radius: 19.2px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+}
+
+.shipmentDetails-upload-files--text {
+}
+
+.shipmentDetails-upload-files--delete {
+    background: #FEF2F2;
+  border-radius: 24px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+text .ant-upload-span {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid #e3e3e3;
+  padding: 20px;
+}
+
+.ant-upload-list-item-error .ant-upload-list-item-card-actions-btn  {
+  opacity: 1;
+  margin-bottom: 15px;
+  background: transparent !important;
+}
