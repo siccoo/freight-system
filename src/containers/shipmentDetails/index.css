@@ -168,7 +168,7 @@ color: #000000;
 .shipmentDetails__border {
   display: flex;
   justify-content: space-between;
-  /* margin-top: 30px; */
+  margin-bottom: 30px;
 }
 
 .shipmentDetails-spacing {

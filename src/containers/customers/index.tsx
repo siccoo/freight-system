@@ -71,6 +71,10 @@ const Customers: React.FC = () => {
     const [customersData, setCustomersData] = useState(null);
     const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+        getCustomers();
+    }, []);
+
     const getCustomers = () => {
         setLoading(true);
         return makeAPICall({
@@ -87,10 +91,6 @@ const Customers: React.FC = () => {
                 console.log(err);
             });
     }
-
-    useEffect(() => {
-        getCustomers();
-    }, []);
 
     return (
         <SiderLayout>

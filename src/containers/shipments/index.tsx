@@ -84,7 +84,6 @@ const Shipments: React.FC = () => {
 
     useEffect(() => {
         getSingleCustomer()
-
         getSingleCustomerShipment()
     }, []);
 
@@ -142,7 +141,7 @@ const Shipments: React.FC = () => {
                                 <span className='shipment__container--edit'>Edit</span>
                             </div>
                         </div>
-                    )} : {
+                    )} {
                         !shipmentData ? ("No data") : (
                             <>
                             <div className='shipment__border'>

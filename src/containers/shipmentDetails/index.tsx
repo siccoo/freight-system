@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Tabs, Drawer, message, Upload } from 'antd';
 import type { UploadProps } from 'antd';
 import { Link } from 'react-router-dom'
@@ -6,9 +6,84 @@ import SiderLayout from '../../components/sidebar'
 import ArrowLeft from "../../assets/arrowLeftIcon.svg";
 import ArrowUp from "../../assets/arrowUpIcon.png";
 
-// import makeAPICall from '../../utils/config';
+import makeAPICall from '../../utils/config';
 
-import "./index.css"
+import "./index.css";
+
+interface ShipmentDetailsData {
+    _id: string;
+    pickup_location: string;
+    delivery_location: string;
+    shipping_type: string;
+    origin_port_code: boolean
+    origin_port_country: boolean;
+    destination_port_code: string;
+    destination_port_country: string;
+    state: string;
+}
+
+
+// {
+//     "origin_port_coordinates": null,
+//     "destination_port_coordinates": [
+//         27.4626361,
+//         42.50479259999999
+//     ],
+//     "insurance": true,
+//     "status": "pending quote upload from admin",
+//     "rate_status": "pending",
+//     "quote_status": "pending_admin",
+//     "invoice_status": null,
+//     "_id": "6304be2c14fb3ae4ca259e05",
+//     "shipping_type": "export",
+//     "user_id": "6304a25ddb72ac9a1590d17e",
+//     "origin_port": null,
+//     "origin_port_code": null,
+//     "origin_port_country": null,
+//     "origin_port_city": null,
+//     "origin_port_province": null,
+//     "origin_port_full_details": null,
+//     "destination_port": "burgas (bgboj) bulgaria",
+//     "destination_port_code": "BGBOJ",
+//     "destination_port_country": "Bulgaria",
+//     "destination_port_city": "Burgas",
+//     "destination_port_province": "Burgas",
+//     "destination_port_full_details": {
+//         "name": "Burgas",
+//         "city": "Burgas",
+//         "country": "Bulgaria",
+//         "alias": [],
+//         "regions": [],
+//         "coordinates": [
+//             27.4626361,
+//             42.50479259999999
+//         ],
+//         "province": "Burgas",
+//         "timezone": "Europe/Sofia",
+//         "unlocs": [
+//             "BGBOJ"
+//         ],
+//         "code": "48702"
+//     },
+//     "pickup_location": "National stadium, Lagos Ikorodu Express Road, Lagos",
+//     "delivery_location": "",
+//     "local_government": "Surulere",
+//     "state": "Lagos",
+//     "admin_creator_id": null,
+//     "admin_creator_details": null,
+//     "createdAt": "2022-08-23T11:46:52.747Z",
+//     "updatedAt": "2022-08-23T11:53:39.124Z",
+//     "__v": 0,
+//     "cargo_description": "money",
+//     "container_count": 1,
+//     "container_size": 20,
+//     "goods_type": "raw materials",
+//     "goods_value": 20000000,
+//     "quote_expiry": "2022-08-24T12:00:00.095Z",
+//     "shipment_pickup_date": "2022-09-02T00:00:00.000Z",
+//     "warehousing": false,
+//     "warehousing_duration": "0"
+// }
 
 const { Dragger } = Upload;
 
@@ -34,6 +109,8 @@ const props: UploadProps = {
 
 const ShipmentDetails: React.FC = () => {
     const [open, setOpen] = useState(false);
+    const [shipmentDetailsData, setShipmentDetailsData] = useState<ShipmentDetailsData>();
+    const [loading, setLoading] = useState(false)
 
     const showDrawer = () => {
         setOpen(true);
@@ -42,6 +119,29 @@ const ShipmentDetails: React.FC = () => {
     const onClose = () => {
         setOpen(false);
     };
+
+    useEffect(() => {
+        getShipmentDetailsData();
+    }, [])
+
+    const getShipmentDetailsData = () => {
+        setLoading(true);
+        return makeAPICall({
+            path: `get_customers`,
+            method: "GET",
+        })
+            .then((data) => {
+                setShipmentDetailsData(data);
+                setLoading(false);
+                console.log(data);
+            })
+            .catch((err) => {
+                setLoading(false);
+                console.log(err);
+            });
+    }
+
+
 
     return (
         <SiderLayout>
@@ -60,30 +160,34 @@ const ShipmentDetails: React.FC = () => {
                         </span>
                     </div>
                 </div>
-
-                <div className='shipmentDetails-upload-container'>
-                    <div className='shipmentDetails-upload-container--export'>
-                        <p>
-                            <img src={ArrowUp} alt="" /> {" "}
-                            Export
-                        </p>
-                        <p>Apr 02, 2022</p>
-                        <p><span>Shipment ID</span><br />
-                            489395758</p>
-                    </div>
-                    <div className='shipmentDetails-upload-container--import'>
-                        <div>
-                            <p>Port of Discharge</p>
-                            <span>NGAPP <br /> <small>Lagos, Nigeria</small> </span>
-                        </div>
-                        <div>
-                            <p>Delivery location</p>
-                            <span>Arlington <br /> <small>VA, USA</small> </span>
-                        </div>
-                        <div></div>
-                    </div>
-                </div>
-
+                {loading ? "loading..." : (
+                    <>
+                        {!shipmentDetailsData ? ("No data") : (
+                            <div className='shipmentDetails-upload-container'>
+                                <div className='shipmentDetails-upload-container--export'>
+                                    <p>
+                                        <img src={ArrowUp} alt="" /> {" "}
+                                        {shipmentDetailsData.shipping_type}
+                                    </p>
+                                    <p>Apr 02, 2022</p>
+                                    <p><span>Shipment ID</span><br />
+                                        {shipmentDetailsData._id}</p>
+                                </div>
+                                <div className='shipmentDetails-upload-container--import'>
+                                    <div>
+                                        <p>Port of Discharge</p>
+                                        <span>{shipmentDetailsData.pickup_location} <br /> <small>{shipmentDetailsData.state}</small> </span>
+                                    </div>
+                                    <div>
+                                        <p>Delivery location</p>
+                                        <span>{shipmentDetailsData.delivery_location} <br /> <small>{shipmentDetailsData.state}</small> </span>
+                                    </div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        )}
+                    </>
+                )}
                 <div className='tab'>
                     <Tabs className='shipment-tab' defaultActiveKey="1">
                         <Tabs.TabPane className='shipment-tabpane' tab="Documents" key="1">
@@ -154,13 +258,13 @@ const ShipmentDetails: React.FC = () => {
                             </div>
                         </Tabs.TabPane>
                         <Tabs.TabPane className='shipment-tabpane' tab="Cargo Details" key="2">
-                            Content of Tab Pane 2
+                            Seamless Frieght Management
                         </Tabs.TabPane>
                         <Tabs.TabPane className='shipment-tabpane' tab="Additional Services" key="3">
-                            Content of Tab Pane 3
+                            Seamless Frieght Management
                         </Tabs.TabPane>
                         <Tabs.TabPane className='shipment-tabpane' tab="Rates" key="4">
-                            Content of Tab Pane 3
+                            Seamless Frieght Management
                         </Tabs.TabPane>
                     </Tabs>
                 </div>
