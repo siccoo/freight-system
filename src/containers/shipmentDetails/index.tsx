@@ -89,7 +89,7 @@ const ShipmentDetails: React.FC = () => {
                     <Link className='shipmentDetails-back' to="/shipments">
                         <img src={ArrowLeft} alt="" />
                         {/* <div> */}
-                        <p className='paragraph'>Shipment Details</p>
+                        <p className='paragraph'>Shipment</p>
                         {/* </div> */}
                     </Link>
                     <div className='shipment-box-button'>
