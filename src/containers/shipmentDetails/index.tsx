@@ -7,6 +7,7 @@ import ArrowLeft from "../../assets/arrowLeftIcon.svg";
 import ArrowUp from "../../assets/arrowUpIcon.png";
 
 import makeAPICall from '../../utils/config';
+import {formatDate} from "../../utils/formatDate";
 
 import "./index.css";
 
@@ -20,6 +21,7 @@ interface ShipmentDetailsData {
     destination_port_code: string;
     destination_port_country: string;
     state: string;
+    createdAt: string;
 }
 
 
@@ -127,7 +129,7 @@ const ShipmentDetails: React.FC = () => {
     const getShipmentDetailsData = () => {
         setLoading(true);
         return makeAPICall({
-            path: `get_customers`,
+            path: `get_single_shipment_details/987654321`,
             method: "GET",
         })
             .then((data) => {
@@ -169,7 +171,7 @@ const ShipmentDetails: React.FC = () => {
                                         <img src={ArrowUp} alt="" /> {" "}
                                         {shipmentDetailsData.shipping_type}
                                     </p>
-                                    <p>Apr 02, 2022</p>
+                                    <p>{formatDate(shipmentDetailsData.createdAt)}</p>
                                     <p><span>Shipment ID</span><br />
                                         {shipmentDetailsData._id}</p>
                                 </div>
