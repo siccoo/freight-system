@@ -12,8 +12,7 @@ import TrackIcon from "../../assets/trackingIcon.svg";
 import DocumentIcon from "../../assets/documentIcon.svg";
 import QuoteIcon from "../../assets/quoteIcon.svg";
 import InvoiceIcon from "../../assets/invoiceIcon.svg";
-import { NavLink } from 'react-router-dom';
-// import Customers from '../../containers/customers';
+import { Link, NavLink } from 'react-router-dom';
 
 type SiderLayoutProps = {
   children: JSX.Element | any
@@ -42,6 +41,7 @@ const SiderLayout: React.FC<SiderLayoutProps> = ({ children }) => (
         borderRight: "1px solid #E5E7EB",
       }}
     >
+      <Link to={'/'}>
       <img
         className="oneportLogo"
         src={OnePortLogo}
@@ -52,6 +52,8 @@ const SiderLayout: React.FC<SiderLayoutProps> = ({ children }) => (
           margin: 25,
           cursor: "pointer"
         }} />
+      </Link>
+      
 
       <div className="sidebar__menu">
         <ul className="sidebar__list">
