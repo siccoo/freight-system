@@ -24,69 +24,6 @@ interface ShipmentDetailsData {
     createdAt: string;
 }
 
-
-// {
-//     "origin_port_coordinates": null,
-//     "destination_port_coordinates": [
-//         27.4626361,
-//         42.50479259999999
-//     ],
-//     "insurance": true,
-//     "status": "pending quote upload from admin",
-//     "rate_status": "pending",
-//     "quote_status": "pending_admin",
-//     "invoice_status": null,
-//     "_id": "6304be2c14fb3ae4ca259e05",
-//     "shipping_type": "export",
-//     "user_id": "6304a25ddb72ac9a1590d17e",
-//     "origin_port": null,
-//     "origin_port_code": null,
-//     "origin_port_country": null,
-//     "origin_port_city": null,
-//     "origin_port_province": null,
-//     "origin_port_full_details": null,
-//     "destination_port": "burgas (bgboj) bulgaria",
-//     "destination_port_code": "BGBOJ",
-//     "destination_port_country": "Bulgaria",
-//     "destination_port_city": "Burgas",
-//     "destination_port_province": "Burgas",
-//     "destination_port_full_details": {
-//         "name": "Burgas",
-//         "city": "Burgas",
-//         "country": "Bulgaria",
-//         "alias": [],
-//         "regions": [],
-//         "coordinates": [
-//             27.4626361,
-//             42.50479259999999
-//         ],
-//         "province": "Burgas",
-//         "timezone": "Europe/Sofia",
-//         "unlocs": [
-//             "BGBOJ"
-//         ],
-//         "code": "48702"
-//     },
-//     "pickup_location": "National stadium, Lagos Ikorodu Express Road, Lagos",
-//     "delivery_location": "",
-//     "local_government": "Surulere",
-//     "state": "Lagos",
-//     "admin_creator_id": null,
-//     "admin_creator_details": null,
-//     "createdAt": "2022-08-23T11:46:52.747Z",
-//     "updatedAt": "2022-08-23T11:53:39.124Z",
-//     "__v": 0,
-//     "cargo_description": "money",
-//     "container_count": 1,
-//     "container_size": 20,
-//     "goods_type": "raw materials",
-//     "goods_value": 20000000,
-//     "quote_expiry": "2022-08-24T12:00:00.095Z",
-//     "shipment_pickup_date": "2022-09-02T00:00:00.000Z",
-//     "warehousing": false,
-//     "warehousing_duration": "0"
-// }
-
 const { Dragger } = Upload;
 
 const props: UploadProps = {
@@ -152,7 +89,7 @@ const ShipmentDetails: React.FC = () => {
                     <Link className='shipmentDetails-back' to="/shipments">
                         <img src={ArrowLeft} alt="" />
                         {/* <div> */}
-                        <p className='paragraph'>Shipment</p>
+                        <p className='paragraph'>Shipment Details</p>
                         {/* </div> */}
                     </Link>
                     <div className='shipment-box-button'>
@@ -243,7 +180,7 @@ const ShipmentDetails: React.FC = () => {
                             </div>
                             <div className='shipmentDetails-upload-files'>
                                 <div className='shipmentDetails-upload-files--save'>
-                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg  width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4.13336 6.9999H7.86669M4.13336 9.48879H7.86669M9.11114 12.5999H2.88891C2.20163 12.5999 1.64447 12.0427 1.64447 11.3555V2.64435C1.64447 1.95706 2.20163 1.3999 2.88891 1.3999H6.36452C6.52954 1.3999 6.6878 1.46546 6.80449 1.58215L10.1733 4.95099C10.29 5.06768 10.3556 5.22595 10.3556 5.39097V11.3555C10.3556 12.0427 9.79843 12.5999 9.11114 12.5999Z" stroke="#3AB44A" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                     <div>
