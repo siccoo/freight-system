@@ -9,18 +9,16 @@ import "./index.css";
 // import Icon from "../../assets/imageIcon.png"
 import { Link } from 'react-router-dom';
 
-interface DataType {
+interface AllCustomersData {
     id: string;
     first_name: string;
     last_name: string;
     email: string;
     phone: string;
-    ip_address: string;
-    is_active: Boolean;
     Avatar: string;
 }
 
-const columns: ColumnsType<DataType> = [
+const columns: ColumnsType<AllCustomersData> = [
     {
         title: 'First Name',
         dataIndex: 'first_name',
@@ -73,10 +71,6 @@ const Customers: React.FC = () => {
     const [customersData, setCustomersData] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        getCustomers();
-    }, []);
-
     const getCustomers = () => {
         setLoading(true);
         return makeAPICall({
@@ -93,14 +87,19 @@ const Customers: React.FC = () => {
                 console.log(err);
             });
     }
+
+    useEffect(() => {
+        getCustomers();
+    }, []);
+
     return (
         <SiderLayout>
             <div className="site-layout-background" style={{ padding: "40px 40px", minHeight: 710 }}>
                 <button type='submit'>Add Customer {" "} +</button>
                 {loading ? 'loading...' : (
-                <div>
-                    {!customersData  ? ("No data") : (<Table columns={columns} dataSource={customersData} />)}
-                </div>
+                    <div>
+                        {!customersData ? ("No data") : (<Table columns={columns} dataSource={customersData} />)}
+                    </div>
                 )}
             </div>
         </SiderLayout>

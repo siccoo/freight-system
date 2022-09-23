@@ -29,7 +29,7 @@ button {
   padding: 10px 24px;
   text-decoration: none;
   border: none;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -84,9 +84,9 @@ button {
 .ant-table table {
   width: 100%;
   text-align: left;
-  /* border-radius: 2px 2px 0 0;
-  border-collapse: separate;
-  border-spacing: 0; */
+  border-radius: 6px 6px 0 0;
+  border-collapse: unset;
+  /* border-spacing: 0; */
 }
 
 th.ant-table-cell {
@@ -101,10 +101,10 @@ th.ant-table-cell {
   text-transform: uppercase;
 }
 
-.ant-table-pagination.ant-pagination {
+/* .ant-table-pagination.ant-pagination {
   margin: 16px 0;
   display: none;
-}
+} */
 
 tbody.ant-table-tbody {
   background: #ffffff;

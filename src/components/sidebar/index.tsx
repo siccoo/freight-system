@@ -22,7 +22,10 @@ type SiderLayoutProps = {
 const { Content, Sider } = Layout;
 
 const SiderLayout: React.FC<SiderLayoutProps> = ({ children }) => (
-  <Layout style={{ height: "100vh", overflow: "hidden" }}>
+  <Layout style={{ 
+    height: "100vh", 
+    // overflow: "hidden" 
+    }}>
     <Sider
       breakpoint="lg"
       collapsedWidth="0"
